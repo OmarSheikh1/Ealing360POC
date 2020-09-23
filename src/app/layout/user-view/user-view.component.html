@@ -1,0 +1,44 @@
+<div
+  style="margin-left: 50px;margin-right: 0px;background-color: #fff;
+    padding: 15px;"
+>
+  <form class="form-horizontal" *ngIf="userData">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Username:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.UserName }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Fullname:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.FirstName + userData.LastName }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Gender:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.Gender }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Emails:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.Emails }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Features:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.Features }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">FavoriteFeature:</label>
+      <div class="col-sm-10 label-value">
+        {{ userData.FavoriteFeature }}
+      </div>
+    </div>
+  </form>
+</div>
+<div *ngIf="loader" class="loader"></div>

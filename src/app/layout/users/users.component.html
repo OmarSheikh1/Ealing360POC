@@ -1,0 +1,31 @@
+<div
+  style="margin-left: 50px;margin-right: 0px;background-color: #fff;
+    padding: 15px;"
+>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Full Name</th>
+        <th>Gender</th>
+        <th>UserName</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersData; let i = index">
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{ user.FirstName + user.LastName }}</td>
+        <td>{{ user.Gender }}</td>
+        <th>{{ user.UserName || "-" }}</th>
+        <td>
+          <i
+            class="fa fa-eye btn btn-default btn-sm"
+            (click)="showUserDetails(user)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="loader" class="loader"></div>

@@ -1,0 +1,70 @@
+<div class="wrapper fadeInDown" style="height: 100vh;">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <div class="fadeIn first">
+      <h3>Ealing360</h3>
+    </div>
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <input
+          type="text"
+          id="username"
+          class="fadeIn second"
+          name="username"
+          placeholder="username *"
+          formControlName="username"
+        />
+        <div
+          *ngIf="
+            (frmCtrls.username.dirty || frmCtrls.username.touched) &&
+            frmCtrls.username.invalid &&
+            frmCtrls.username.errors
+          "
+          class="invalid-feedback fld-mad"
+        >
+          <span *ngIf="frmCtrls.username.errors.required">{{ reqMsg }}</span>
+          <span *ngIf="frmCtrls.username.errors.minlength"
+            >Minimum length is {{ nameMinLength }}</span
+          >
+          <span *ngIf="frmCtrls.username.errors.maxlength"
+            >Maximum length is {{ nameMaxLength }}</span
+          >
+        </div>
+      </div>
+      <div>
+        <input
+          type="password"
+          id="password"
+          class="fadeIn third"
+          name="password"
+          placeholder="password *"
+          formControlName="password"
+        />
+        <div
+          *ngIf="
+            (frmCtrls.password.dirty || frmCtrls.password.touched) &&
+            frmCtrls.password.invalid &&
+            frmCtrls.password.errors
+          "
+          class="invalid-feedback fld-mad"
+        >
+          <span *ngIf="frmCtrls.password.errors.required">{{ reqMsg }}</span>
+          <span *ngIf="frmCtrls.password.errors.minlength"
+            >Minimum length is {{ pwdMinLength }}</span
+          >
+          <span *ngIf="frmCtrls.password.errors.maxlength"
+            >Maximum length is {{ pwdMaxLength }}</span
+          >
+        </div>
+      </div>
+      <input
+        type="submit"
+        class="fadeIn fourth"
+        [disabled]="loginForm.invalid"
+        value="Log In"
+      />
+    </form>
+  </div>
+</div>
+<div *ngIf="loader" id="loader"></div>

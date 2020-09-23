@@ -1,0 +1,48 @@
+/* Side Navigation */
+
+@media (min-width: 768px) {
+  .side-nav {
+    position: fixed;
+    top: 60px;
+    width: 50px;
+    border: none;
+    border-radius: 0;
+    /* border-top: 1px rgba(0, 0, 0, 0.5) solid; */
+    overflow-y: auto;
+    background-color: #ffffff;
+    /*background-color: #5A6B7D;*/
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+  }
+
+  .side-nav li a:hover,
+  .side-nav li a:focus {
+    outline: none;
+    background-color: #1a242f !important;
+  }
+}
+
+.side-nav > li > ul {
+  padding: 0;
+  border-bottom: 1px rgba(0, 0, 0, 0.3) solid;
+}
+
+.side-nav > li > ul > li > a {
+  display: block;
+  padding: 10px 15px 10px 38px;
+  text-decoration: none;
+  /*color: #999;*/
+  color: #fff;
+}
+
+.side-nav > li > ul > li > a:hover {
+  color: #fff;
+}
+
+.side-nav > .active > a,
+.side-nav > .active > a:hover,
+.side-nav > .active > a:focus {
+  color: #74d17e;
+  background-color: #e9f8eb;
+}
